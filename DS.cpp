@@ -10,8 +10,8 @@ const int MAX_N = 1050;
 const int MAX_M = 1050;
 const int INF = 1000000;
 int steps = 0;
-int ans_x[MAX_N];
-int ans_y[MAX_M];
+int ans_x[1000000];
+int ans_y[1000000];
 int rows, cols , battery;
 typedef pair<int, int> P;
 char maze[MAX_N][MAX_M];
@@ -70,7 +70,7 @@ void bfs3(int sx,int sy,int ex,int ey)
 				if(i==3){node *up = new node(nx,ny); up->last=n; Q.push(up);}
 			}
 		}
-	}
+	} 
 	node *current = n;
 	while(current!=NULL)
 	{
@@ -217,7 +217,7 @@ int main(int argc, char **argv)
 	int c = 0;
 	for(int i=0;i<k;i++)
 	{
-		if(pox[k-i-1]==1&&poy[k-i-1]==1)
+		if(pox[k-i-1]==Rx&&poy[k-i-1]==Ry)
 		{
 			if(i==0){fx=pox[k-i-2];fy=poy[k-i-2];}
 			else
@@ -261,7 +261,7 @@ int main(int argc, char **argv)
 	fileoutput<<c<<endl;
 	for(int i=0;i<k;i++)
 	{
-		if(pox[k-i-1]==1&&poy[k-i-1]==1)
+		if(pox[k-i-1]==Rx&&poy[k-i-1]==Ry)
 		{
 			if(i==0){fx=pox[k-i-2];fy=poy[k-i-2];}
 			else
